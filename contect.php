@@ -40,7 +40,7 @@
 			display: flex;
 			width: 100%;
 			height: 20px;
-			padding: 40px
+			padding: 40px;
             font-size: 40px;
             padding-top: 20px;
             text-transform: uppercase;

@@ -1,11 +1,11 @@
 <?php 
-    include_once 'ph_contect.php'; 
+	include_once 'ph_contect.php'; 
+	session_start();
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-	
 	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&display=swap" rel="stylesheet">
@@ -16,13 +16,12 @@
   <title>  Page </title>
 </head>
 <body>
-
-
 	<section>
 	
+	    <a href="signin.php"><h1 class="sign"> signup </h1></a> 
 		<div class="nav">
 			<ul>
-				<a href="index.php"><li class="home active"> home </li></a>	
+				<a href="index.php"><li class="home"> home </li></a>	
 				<a href="#contact"><li class="contact"> contect </li></a>
 				<div class="intro">
 					<img class="logo" src="2x/logo1.jpg" alt="">
@@ -45,7 +44,7 @@
 		
 	
 		</div>
-	<div class="banner-3">
+		<div class="banner-3">
 		<div class="text-con3">
 
 		<h1> this is a new header line </h1>
@@ -57,7 +56,7 @@
 	 <div class="img-wrapper">
 		<div class="ban3 ban-img1">
 	
-		<div class="image-grid " style=" background-image: url(img/img1.jpg);"></div>
+		<div class="image-grid " style=" background-image: url(img/img5.jpg);"></div>
 		 <div class="grad grad1"></div>
 		   
 	  <h1 class="text-img text1">img one</h1>  
@@ -68,7 +67,7 @@
 <div class="img-wrapper">
         <div class="ban3 ban-img2">
 		
-		 <div class="image-grid " style=" background-image: url(img/img1.jpg);"></div>
+		 <div class="image-grid " style=" background-image: url(img/IMG_9751.jpg);"></div>
 		 <div class="grad grad2"></div>  
 		 <h1 class="text-img text2">img one</h1>
 		
@@ -96,7 +95,6 @@
 		</div> 
 		
 <!-------------------------------------------------------------------------------------------------------------------------------------->		
-
 		<div class="banner">
 			<div class="img">
 		
@@ -116,7 +114,7 @@
 		  <div class="con">
 		  <div class="icon-con"> 
 
-   <!---------------------------------------------------------------------------------------------------------------------------------->         
+            
 			 <div class="flip flip1">
 			  <div class="front">
 				 <i class="fab fa-facebook"></i>
@@ -145,7 +143,7 @@
 					  </div>
 					</div>
 
-  <!----------------------------------------------------------------------------------------------------------------------------->      
+        
 	
       
 			</div>
@@ -157,7 +155,7 @@
 	<!---	  <form   class="message-form" action="photoSite/insert.php" method="post">  -->
 			<form   class="message-form" action="ph_con.php" method="POST">
 
-			 <h3>Send me a message!</h3> 
+			 <h3>contact me!</h3> 
 			<h5>first name: </h5><input class="first-name form-control" type="text" name="first" placeholder="first name"><br>
 			<h5>last name: </h5><input class="last-name form-control" type="text" name="last" placeholder="last name"><br>
 			<h5>email: </h5><input class="email form-control" type="email" name="email" placeholder="johnDoe@gmsil.com"><br>
@@ -165,11 +163,10 @@
 		
 			<button class="form-control submit" type="submit" name="submit"> submit message!</button>
 		  </form>
-		
 		</div>
 	 	
 	</section>
-	
+
 
 	<style type="text/css">
 		* {
@@ -183,12 +180,7 @@
 			width: 100%;
 			height: 100vh;
 		}
-		.active{
-			color:brown; 
-		}
-		.contact:active {
-			color:brown;
-		}
+	
 /*-----------------------------------------------------------------------------*/
     .landing-con {
 		width: 100%;
@@ -198,7 +190,6 @@
 		justify-content: center;
 			align-items: center;
 			display: flex;
-			border-bottom: 2px black solid;
 	}
 	.img-landing {
 			background-size: cover;
@@ -264,9 +255,10 @@
 		opacity: .2;
 	}
 	
-/*-----------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+	/*-----------------------------------------------------------------------------------------------------------------------------------*/
 	
-		.img-cover {
+	.img-cover {
 			background-size: cover;
 			width: 100%;
 			height: 100vh;
@@ -396,7 +388,9 @@
        
 /*---------------------------------------------------------------------------------------------------------------------------------*/
      
- 	 .grad{
+ 	 
+  
+	.grad{
 			justify-content: center;
 			 align-items: center;
 			 display: flex;
@@ -415,9 +409,13 @@
     .active2{
       transform: translateY(0);
 	}  
-  
-
 /*----------------------------------------------------------------------------------------------------------*/
+		.img-cover {
+			background-size: cover;
+			width: 100%;
+			height: 100vh;
+		}
+		
 		.intro {
 			justify-content: center;
 			align-items: center;
@@ -647,7 +645,7 @@
 			margin: 10px;
 			border-radius: 30px 5px 30px 5px;
 		}
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
         .icon-con {
 			justify-content: space-around;
 			align-items: center;
@@ -729,14 +727,8 @@
 		 
 	  }
 	
-/*--------------------------------------------------------------------------------------------------------------------------------*/
-    
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------*/
-	</style>
+</style>
     <script type="text/javascript">
   
         const text = document.querySelector(".text-div")
@@ -950,3 +942,6 @@ ban2.addEventListener('click', () => {
     </script>
 </body>
 </html>
+
+ 
+
