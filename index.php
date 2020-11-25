@@ -18,7 +18,7 @@
 <body>
 	<section>
 	
-	    <a href="signin.php"><h1 class="sign"> signup </h1></a> 
+	    <a href="login/signin.php"><h1 class="sign"> signup </h1></a> 
 		<div class="nav">
 			<ul>
 				<a href="index.php"><li class="home"> home </li></a>	
