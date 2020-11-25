@@ -10,7 +10,7 @@ if(isset($_POST['submit'])) {
         header("location: ../index.php?workssql=emppty");
         exit(); 
     } else {
-       $sql = "SELECT * FROM WHERE user=? OR email=? ;";
+       $sql = "SELECT * FROM WHERE us_na=? OR email_id=?;";
        $stmt = mysqli_stmt_init($conn);
        if(!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../index.php?workssql=failed");
@@ -21,15 +21,15 @@ if(isset($_POST['submit'])) {
            $result = mysqli_stmt_get_result($stmt);
        }
         if($row = mysqli_fetch_assoc($result)) {
-      //    $passCh = password_verify($pass, $row['pass_w']); get password column name //
+          $passC = password_verify($pass, $row['pass_w']); // get password column name //
         
-        if($passCh == false) {
+        if($passC == false) {
             header("location: ../index.php?workssql=passincorrrect");
                     exit(); 
-        } else if($passCh == true) {
+        } else if($passC == true) {
            session_start();
-      //    $_SESSION[] = $row['id'];   get id column name //
-      //    $_SESSION[] = $row['user']; get user column name
+         $_SESSION[] = $row['id'];  // get id column name //
+          $_SESSION[] = $row['us_na'];// get user column name
 
           header("location: ../index.php?login=success");
             exit();

@@ -13,6 +13,10 @@
 <body>
 
     <section>
+     <div class="con">
+        <div class="title">
+         <h1> sign up </h1>
+        </div>
     <?php 
       $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
@@ -48,6 +52,7 @@
         <input name="submit" type="submit" value="signup">
     </form>
         </div>
+     </div>
     </section>
 </body>
 </html>
@@ -64,15 +69,57 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+        
+    }
+    .con{
+        width: 40vw;
+        height: 80vh;
+        background-color: red;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+    }
+    .title h1{
+      color: white;
+      font-size: 40px;
+      margin-top: 60px;
+      margin-right: 40px;
+      margin-left: 40px;
+      margin-bottom: 30px;
+    }
+    .title{
+        border-bottom: 2px black solid;
+    }
+    form{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    input{
+        margin: 20px;
     }
     .error{
+        margin-top: 40px;
         width: 20vw;
         color:brown;
         background-color: burlywood;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+     
     }
     .success{
-        width: 10vw;
+        margin-top: 40px;
+        width: 20vw;
         color: green;
-        background-color: burlywood;
+        background-color: yellow;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+   
     }
 </style>
