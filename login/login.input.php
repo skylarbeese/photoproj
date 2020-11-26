@@ -3,8 +3,8 @@
 if(isset($_POST['submit'])) {
     require 'user.con.php';
     
-    $userid =  $_POST['username'];
-    $pass =  $_POST['password'];
+    $userid =  $_POST['user'];
+    $pass =  $_POST['pass'];
 
     if(empty($userid) || empty($pass)) {
         header("location: ../index.php?workssql=emppty");

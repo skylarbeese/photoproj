@@ -1,5 +1,5 @@
 <?php 
-	include_once 'ph_contect.php'; 
+	
 	session_start();
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,10 @@
 </head>
 <body>
 	<section>
-	
+	    <form class="signin" action="user.con.php" method="POST">
+		<h2>username: </h2><input class="" type="text" name="user" placeholder="username">
+		<h2>password: </h2><input class="" type="text" name="pass" placeholder="password">
+		</form>
 	    <a href="login/signin.php"><h1 class="sign"> signup </h1></a> 
 		<div class="nav">
 			<ul>
@@ -153,7 +156,7 @@
 		</div>
 			<div class="linear-gradient2"></div>
 	<!---	  <form   class="message-form" action="photoSite/insert.php" method="post">  -->
-			<form   class="message-form" action="ph_con.php" method="POST">
+			<form class="message-form" action="" method="POST">
 
 			 <h3>contact me!</h3> 
 			<h5>first name: </h5><input class="first-name form-control" type="text" name="first" placeholder="first name"><br>
@@ -182,6 +185,17 @@
 		}
 	
 /*-----------------------------------------------------------------------------*/
+form.signin{
+	
+			float: left;
+			display: flex;
+			margin: 10px;
+}
+form.signin h2{
+	font-size: 20px;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
     .landing-con {
 		width: 100%;
 	}
@@ -591,7 +605,7 @@
             padding: 20px;
 
 		}
-		form {
+		.message-form {
 		    
 			justify-content: center;
             align-items: center;
@@ -627,7 +641,7 @@
 				filter: blur(0);
 			}
 		}
-		input, textarea{
+	.message-form input, textarea{
 		background-color: rgb(0, 0, 0, .3);
 		padding: 2px;
 		border-radius: 5px 5px 30px 5px;

@@ -49,7 +49,7 @@
         <input name="email" type="email" placeholder="email">
         <input name="password" type="password" placeholder="password">
         <input name="passwordch" type="password" placeholder="password resubmit">
-        <input name="submit" type="submit" value="signup">
+        <input class="btn" name="submit" type="submit" value="signup">
     </form>
         </div>
      </div>
@@ -74,7 +74,7 @@
     .con{
         width: 40vw;
         height: 80vh;
-        background-color: red;
+        background-color: white;
         justify-content: center;
         align-items: center;
         display: flex;
@@ -82,9 +82,9 @@
         border-radius: 10px;
     }
     .title h1{
-      color: white;
-      font-size: 40px;
-      margin-top: 60px;
+      text-transform: uppercase;
+      font-size: 70px;
+      margin-top: 10px;
       margin-right: 40px;
       margin-left: 40px;
       margin-bottom: 30px;
@@ -100,26 +100,37 @@
        
     }
     input{
-        margin: 20px;
+        margin: 10px;
+        padding: 0 5px;
+        width: 300px;
+        height: 30px;
+        font-size: 20px;
+        border: none;
+        border-bottom: 1px solid black;
+        background-color: transparent;
+    }
+    input.btn {
+        background-color: white;
+      
     }
     .error{
         margin-top: 40px;
         width: 20vw;
-        color:brown;
-        background-color: burlywood;
+        color:  rgb(54, 0, 0);
+        background-color: rgb(129, 0, 0, .8);
         justify-content: center;
         align-items: center;
         display: flex;
-     
+        padding: 5px;
     }
     .success{
         margin-top: 40px;
         width: 20vw;
-        color: green;
-        background-color: yellow;
+        color: rgb(0, 33, 0);
+        background-color: rgb(0, 79, 0, .7);
         justify-content: center;
         align-items: center;
         display: flex;
-   
+        padding: 5px;
     }
 </style>
