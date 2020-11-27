@@ -10,18 +10,29 @@
 	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Sacramento&display=swap" rel="stylesheet">  
-	     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
   <title>  Page </title>
 </head>
 <body>
+	<div class="signup-page">
+	<?php include "login/signin.php";?>
+	</div>
 	<section>
-	    <form class="signin" action="user.con.php" method="POST">
+	<?php 
+      $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+      if(strpos($fullUrl, "login=success") == true) {
+		  echo "<p class='error'> signed in </p>";
+	  } 
+		  ?>
+	    <form class="signin" action="login/login.input.php" method="POST">
 		<h2>username: </h2><input class="" type="text" name="user" placeholder="username">
 		<h2>password: </h2><input class="" type="text" name="pass" placeholder="password">
+		<input type="submit" name="submit" value="submit">
 		</form>
-	    <a href="login/signin.php"><h1 class="sign"> signup </h1></a> 
+	    <button class="sign"> signup </button>
 		<div class="nav">
 			<ul>
 				<a href="index.php"><li class="home"> home </li></a>	
@@ -167,16 +178,26 @@
 			<button class="form-control submit" type="submit" name="submit"> submit message!</button>
 		  </form>
 		</div>
-	 	
+	
 	</section>
 
-
+</body>
+</html>
 	<style type="text/css">
 		* {
 			padding: 0;
 			margin: 0;
 			
 		}
+		.signup-page{
+			visibility: hidden;
+		}
+		.vis{
+			visibility: visible;
+    }
+	.hid{
+		visibility: hidden;
+	}
 		section {
 			
 		
@@ -185,13 +206,14 @@
 		}
 	
 /*-----------------------------------------------------------------------------*/
-form.signin{
+
+.signin{
 	
 			float: left;
 			display: flex;
 			margin: 10px;
 }
-form.signin h2{
+.signin h2{
 	font-size: 20px;
 }
 
@@ -199,6 +221,7 @@ form.signin h2{
     .landing-con {
 		width: 100%;
 	}
+	
 	.landing {
 		position: relative;
 		justify-content: center;
@@ -692,10 +715,7 @@ form.signin h2{
 		}
 		
 		
-		h2:hover {
-			border-bottom: 2px darkred solid;
-			color: darkred;
-		}
+	
         .flip  {
 			width: 30px;
 			height: 60px;
@@ -752,8 +772,8 @@ form.signin h2{
 		const left = document.querySelector(".left")
 		const right = document.querySelector(".right")
 	   const text2 = document.querySelector('.text-con3')
-        
-		
+        const signBtn = document.querySelector('.sign')
+		const signPage = document.querySelector('.signup-page')
 	
 	let images = [
 		  {
@@ -953,9 +973,16 @@ ban2.addEventListener('click', () => {
 				grad4.classList.remove('active2')
 			} 
 		})
+
+	//------------------------------------------------------------------------------------------------//
+    const page = document.querySelector('.page-con')
+	signBtn.addEventListener('click', () => {
+		//alert('working')
+      signPage.classList.toggle('vis')
+	})
+
     </script>
-</body>
-</html>
+
 
  
 

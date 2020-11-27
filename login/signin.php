@@ -1,6 +1,6 @@
 <?php 
     include_once 'user.con.php'; 
-    session_start();
+ 
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,8 +12,8 @@
 </head>
 <body>
 
-    <section>
-     <div class="con">
+    <div class="page-con">
+     <div class="con1">
         <div class="title">
          <h1> sign up </h1>
         </div>
@@ -35,9 +35,7 @@
      } else if(strpos($fullUrl, "error=passs") == true) {
         echo "<p class='error'> password and password varify do not match </p>";
       
-     } else if(strpos($fullUrl, "error=passs") == true) {
-        echo "<p class='error'> password and password varify do not match </p>";
-        
+      
      } else if(strpos($fullUrl, "workssql=success") == true) {
         echo "<p class='success'> success! you are now signed up! </p>";
        
@@ -53,7 +51,7 @@
     </form>
         </div>
      </div>
-    </section>
+    </div>
 </body>
 </html>
 <style>
@@ -61,17 +59,18 @@
         padding: 0;
         margin: 0;
     }
-    section{
+    .page-con{
         width: 100vw;
         height: 100vh;
-        background-color: black;
+        background-color: rgb(0, 0, 0, .6);
         justify-content: center;
         align-items: center;
         display: flex;
-        flex-direction: column;
-        
+        position: fixed;  
+        z-index: 3;
     }
-    .con{
+  
+    .con1{
         width: 40vw;
         height: 80vh;
         background-color: white;
@@ -92,14 +91,14 @@
     .title{
         border-bottom: 2px black solid;
     }
-    form{
+    .signup{
         justify-content: center;
         align-items: center;
         display: flex;
         flex-direction: column;
        
     }
-    input{
+  .signup  input{
         margin: 10px;
         padding: 0 5px;
         width: 300px;
@@ -109,9 +108,12 @@
         border-bottom: 1px solid black;
         background-color: transparent;
     }
-    input.btn {
+  .signup  input.btn {
         background-color: white;
       
+    }
+    input.btn:hover{
+        background-color: gray;
     }
     .error{
         margin-top: 40px;
