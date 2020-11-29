@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST["submit"])) {
+/*if(isset($_POST["submit"])) {
   require 'user.con.php';
   $user =  $_POST['uername'];
   $email =  $_POST['email'];
@@ -46,6 +46,59 @@ if(isset($_POST["submit"])) {
                 }
   } 
        
-}
+}*/
+
+if(isset($_POST["submit"])) {
+  require 'user.con.php';
+  $user =  $_POST['uername'];
+  $email =  $_POST['email'];
+  $pass =  $_POST['password'];
+  $passch =  $_POST['passwordch'];
+
+  if(empty($user) || empty($email) || empty($pass) || empty($passch)) {
+    header("location: signin.php?error=emptyfields&user"); 
+    exit();
+  } else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $user)){
+    header("location: signin.php?error=emvalidemail/username");
+    exit();
+  } else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    header("location: signin.php?error=invalidemails&user"); 
+    exit(); 
+  } else if(!preg_match("/^[a-zA-Z0-9]*$/",$user)) {
+    header("location: signin.php?error=passs&user");  
+    exit();
+  } else if($pass !== $passch) {
+    header("location: signin.php?error=passs");  
+    exit();
+  } else {
+ 
+   $sql = "SELECT * FROM login_ta WHERE email_id='$user' AND us_na='$email';";
+   $result = mysqli_query($conn, $sql);
+     if(mysqli_num_rows($result) > 0) {
+    header("location: signin.php?error=usertaken"); 
+    exit();
+
+    
+    } else {   
+    }  
+
+
+  $query = "INSERT INTO login_ta (email_id, us_na, pass_w) VALUES('$user', '$email', '$pass');";
+  $query_run = mysqli_query($conn, $query);
+  header("location: signin.php?workssql=successdddd"); 
+  exit();
+
+      if($query_run) {
+        header("location: signin.php?workssql=success"); 
+      exit();
+    } else {
+      header("location: signin.php?workssql=notsuccess"); 
+      exit();
+    }
+   
+     
+    }
+  } 
+       
 
 

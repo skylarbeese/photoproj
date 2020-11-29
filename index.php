@@ -1,6 +1,5 @@
-<?php 
-	
-	session_start();
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,23 +15,34 @@
   <title>  Page </title>
 </head>
 <body>
-	<div class="signup-page">
-	<?php include "login/signin.php";?>
-	</div>
+<!--	<div class="signup-page">
+	<?php// include "login/signin.php";?>
+	</div> -->
 	<section>
-	<?php 
-      $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-      if(strpos($fullUrl, "login=success") == true) {
-		  echo "<p class='error'> signed in </p>";
-	  } 
-		  ?>
-	    <form class="signin" action="login/login.input.php" method="POST">
-		<h2>username: </h2><input class="" type="text" name="user" placeholder="username">
-		<h2>password: </h2><input class="" type="text" name="pass" placeholder="password">
-		<input type="submit" name="submit" value="submit">
-		</form>
-	    <button class="sign"> signup </button>
+  <div class="sign-con"> 
+  <div class="signin-div">
+	
+  <?php 
+   if(isset($_SESSION['user'])) {
+	  echo "<form action='login/logout.php' method'POST'>
+	  <input type='submit' name='submit' value='logout'>
+	  </form>";
+   } else {
+	echo " <form class='signin' action='login/login.input.php' method='POST'>
+	<h2>username: </h2><input  type='text' name='user' placeholder='username'>
+	<h2>password: </h2><input  type='text' name='pass' placeholder='password'>
+	<input type='submit' name='submit' value='login'>
+	</form>";
+   }
+?>
+  </div> 
+  <?php //include 'login/login.mess.php'; ?> 
+ 
+<!--  <h1 class="btn-sign-in"> sign in </h1>  -->
+  </div>
+  
+		 <a href="login/signin.php"><h1> signup </h1></a>
+	  <!--  <button class="sign"> signup </button>  --->
 		<div class="nav">
 			<ul>
 				<a href="index.php"><li class="home"> home </li></a>	
@@ -189,15 +199,27 @@
 			margin: 0;
 			
 		}
+	
+		.sign-con{
+			justify-content: center;
+	        align-items: center;
+	        display: flex;
+		}
+		.sign-con h1{
+			width: 70px;
+			height: 40px;
+		
+		}
 		.signup-page{
 			visibility: hidden;
+
 		}
 		.vis{
 			visibility: visible;
-    }
-	.hid{
+       }
+	  .hid{
 		visibility: hidden;
-	}
+	  }
 		section {
 			
 		
@@ -206,7 +228,21 @@
 		}
 	
 /*-----------------------------------------------------------------------------*/
-
+/*
+  .signin-div{
+	  width:50%;
+	  height: 10%; 
+	  transform: translateY(-40px); 
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	 
+	  transition: .6s;
+  }
+  .sig{
+	transform: translateY(0);
+  } */
+/*----------------------------------------------------------------------------------------------------*/
 .signin{
 	
 			float: left;
@@ -216,7 +252,14 @@
 .signin h2{
 	font-size: 20px;
 }
-
+.btn-sign-in{
+	width:100px;
+	  height: 70px;
+ 
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+}
 /*-------------------------------------------------------------------------------------------------------*/
     .landing-con {
 		width: 100%;
@@ -976,10 +1019,22 @@ ban2.addEventListener('click', () => {
 
 	//------------------------------------------------------------------------------------------------//
     const page = document.querySelector('.page-con')
+
+	
+/*
 	signBtn.addEventListener('click', () => {
 		//alert('working')
       signPage.classList.toggle('vis')
 	})
+*/
+  //  const btnSign = document.querySelector('.btn-sign-in')
+  //  const signDiv1 = document.querySelector('.signin-div')
+
+//	btnSign.addEventListener('click', () => {
+//		
+	//	alert('working')
+	    signDiv1.classList.toggle('sig')
+//	})
 
     </script>
 

@@ -20,7 +20,7 @@
     <?php 
       $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-      if(strpos($fullUrl, "error=emptyfields") == true) {
+      if(strpos($fullUrl, "error=emptyfields&user") == true) {
           echo "<p class='error'> you did not fill in all the information </p>";
          
       } else if(strpos($fullUrl, "error=emvalidemail/username") == true) {
@@ -35,6 +35,8 @@
      } else if(strpos($fullUrl, "error=passs") == true) {
         echo "<p class='error'> password and password varify do not match </p>";
       
+    } else if(strpos($fullUrl, "error=usertaken") == true) {
+        echo "<p class='error'> user or email in taken </p>";
       
      } else if(strpos($fullUrl, "workssql=success") == true) {
         echo "<p class='success'> success! you are now signed up! </p>";
@@ -44,7 +46,7 @@
         <div class="form-div">
         <form class="signup" action="sub.input.php" method="POST">
         <input name="uername" type="text" placeholder="username">
-        <input name="email" type="email" placeholder="email">
+        <input name="email" type="text" placeholder="email">
         <input name="password" type="password" placeholder="password">
         <input name="passwordch" type="password" placeholder="password resubmit">
         <input class="btn" name="submit" type="submit" value="signup">
