@@ -190,7 +190,7 @@ session_start();
    
 			   </form>';
    } else {
-	   echo '<h3> signup to contact me!</h3>';
+	   echo '<h3 class="mess"> signup to contact me!</h3>';
    }
 ?>
 		</div>
@@ -642,6 +642,12 @@ session_start();
 			 width: 105%;
 			 height: 92%;
 			 background-image: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4));
+		}
+		h3.mess{
+			justify-content: center;
+			 align-items: center;
+			 display: flex;
+			 position: absolute;
 		}
 		.img-text {
 			width: 70vw;
