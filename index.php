@@ -15,9 +15,7 @@ session_start();
   <title>  Page </title>
 </head>
 <body>
-<!--	<div class="signup-page">
-	<?php// include "login/signin.php";?>
-	</div> -->
+
 	<section>
   <div class="sign-con"> 
   <div class="signin-div">
@@ -38,7 +36,7 @@ session_start();
    }
 ?>
   </div> 
-  <?php //include 'login/login.mess.php'; ?> 
+ 
  
 
   </div>
@@ -178,8 +176,9 @@ session_start();
 		   <div class="img2">
 		</div>
 			<div class="linear-gradient2"></div>
-
-			<form class="message-form" action="" method="POST">
+<?php
+   if(isset($_SESSION['user'])) {
+		echo	'<form class="message-form" action="" method="POST">
 
 			 <h3>contact me!</h3> 
 			<h5>first name: </h5><input class="first-name form-control" type="text" name="first" placeholder="first name"><br>
@@ -188,7 +187,12 @@ session_start();
 			<h5>type your questions here! </h5><textarea class="message form-control" type="text" name="text" row="5" placeholder="message..."></textarea><br>
 		
 			<button class="form-control submit" type="submit" name="submit"> submit message!</button>
-		  </form>
+   
+			   </form>';
+   } else {
+	   echo '<h3> signup to contact me!</h3>';
+   }
+?>
 		</div>
 	
 	</section>
@@ -705,6 +709,7 @@ session_start();
 			margin: 10px;
 			border-radius: 30px 5px 30px 5px;
 		}
+		
 /*-------------------------------------------------------------------------------------------------*/
         .icon-con {
 			justify-content: space-around;
