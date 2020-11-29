@@ -33,16 +33,18 @@ session_start();
 	<h2>password: </h2><input  type='text' name='pass' placeholder='password'>
 	<input type='submit' name='submit' value='login'>
 	</form>";
+
+	echo " <a href='login/signin.php'><button class='signup'> signup </h1></button>";
    }
 ?>
   </div> 
   <?php //include 'login/login.mess.php'; ?> 
  
-<!--  <h1 class="btn-sign-in"> sign in </h1>  -->
+
   </div>
   
-		 <a href="login/signin.php"><h1> signup </h1></a>
-	  <!--  <button class="sign"> signup </button>  --->
+		
+	
 		<div class="nav">
 			<ul>
 				<a href="index.php"><li class="home"> home </li></a>	
@@ -176,7 +178,7 @@ session_start();
 		   <div class="img2">
 		</div>
 			<div class="linear-gradient2"></div>
-	<!---	  <form   class="message-form" action="photoSite/insert.php" method="post">  -->
+
 			<form class="message-form" action="" method="POST">
 
 			 <h3>contact me!</h3> 
@@ -228,21 +230,16 @@ session_start();
 		}
 	
 /*-----------------------------------------------------------------------------*/
-/*
-  .signin-div{
-	  width:50%;
-	  height: 10%; 
-	  transform: translateY(-40px); 
-	  justify-content: center;
-	  align-items: center;
-	  display: flex;
-	 
-	  transition: .6s;
-  }
-  .sig{
-	transform: translateY(0);
-  } */
+
 /*----------------------------------------------------------------------------------------------------*/
+.signup{
+	width:20%;
+	  height: 10%;
+}
+.signup:hover{
+	background-color: brown;
+	color:blanchedalmond;
+}
 .signin{
 	
 			float: left;
@@ -345,7 +342,7 @@ session_start();
 		}
 		.banner-3 {
 			width: 100vw;
-			height: 100vh;
+			height: 120vh;
 			justify-content: space-around;
 			align-items: center;
 			display: flex;
@@ -398,16 +395,7 @@ session_start();
 	     
 			padding: 20px;
 		}
-/*		.img-wrapper{
-			width: 270px;
-			height: 270px;
-		    margin:5px;
-            justify-content: center;
-			align-items: center;
-			display: flex;
-			position: relative;
-			border: 2px red solid;
-		} */
+
 		.ban3 {
 			width: 270px;
 			height: 270px;
@@ -439,15 +427,7 @@ session_start();
 			align-items: center;
 			display: flex;
 		}
-      /*  .box-text{
-			background-position: center;
-			justify-content: center;
-			align-items: center;
-			display: flex;
-			width: 100px;
-			height: 100px;
-			border: 2px white solid;
-		} */
+    
 /*-------------------------------------------------------------------------------------------------------*/		
 		.text-img{
 			color: black;
@@ -1021,20 +1001,7 @@ ban2.addEventListener('click', () => {
     const page = document.querySelector('.page-con')
 
 	
-/*
-	signBtn.addEventListener('click', () => {
-		//alert('working')
-      signPage.classList.toggle('vis')
-	})
-*/
-  //  const btnSign = document.querySelector('.btn-sign-in')
-  //  const signDiv1 = document.querySelector('.signin-div')
 
-//	btnSign.addEventListener('click', () => {
-//		
-	//	alert('working')
-	    signDiv1.classList.toggle('sig')
-//	})
 
     </script>
 

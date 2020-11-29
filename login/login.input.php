@@ -70,7 +70,7 @@ if(isset($_POST['user']) &&  isset($_POST['pass'])) {
     } else {
         $sql = "SELECT * FROM login_ta WHERE us_na='$username' OR email_id='$username' AND pass_w='$password';";
         $result = mysqli_query($conn, $sql);
-        if(mysqli_num_rows($result) === 1) {
+        if(mysqli_num_rows($result) >= 1) {
             $row = mysqli_fetch_assoc($result);
           if($row['us_na'] === $username || $row['email_id'] === $username && $row['pass_w'] === $password) {
             session_start();
