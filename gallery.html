@@ -2,6 +2,11 @@
 <html>
 
 <head>
+	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Sacramento&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
 	     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
   <meta charset="utf-8" />
 
@@ -12,13 +17,13 @@
 		
 		<div class="nav">
 			<ul>
-				<a href="project home index.html"><li class="home"> home </li></a>	
+				<a href="index.php"><li class="home"> home </li></a>	
 				<a href="#contact"><li class="contact"> contect </li></a>
 				<div class="intro">
 					<img class="logo" src="2x/logo1.jpg" alt="" >
 					<h1><span> S</span>kylar Beese</h1>
 				</div>
-					<li class="about"> about </li>
+					<a href="about.php"><li class="about"> about </li></a>
 				<a href="gallery.html"><li class="gallery1"> gallery </li></a>	
 			</ul>
 	
@@ -133,6 +138,34 @@
 		.nav {
 			transform: translateY(0px);
          
+		}
+		.img-cover {
+			background-size: cover;
+			width: 100%;
+			height: 100vh;
+		}
+		
+		.intro {
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+		    font-size: 30px;
+		/*	font-family: 'Dosis', sans-serif; */
+		text-transform: capitalize;
+		/*font-family: 'Parisienne', cursive;*/
+		font-family: 'Great Vibes', cursive;
+		font-weight: 2;
+		
+		}
+        h1 span {
+			font-size: 80px;
+			font-weight: 2;
+		}
+		h3 {
+			font-size: 60px;
+			color: beige;
+			padding-bottom: 30px;
 		}
 		.logo{
 			width: 34px;

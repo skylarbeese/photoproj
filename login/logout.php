@@ -6,7 +6,7 @@ if(isset($_POST['submit'])) {
 
 session_destroy();
 
-header("location: ../index.php");
+header("location: ../about.php");
 } else {
-    header("location: ../index.php?eroro");
+    header("location: ../about.php?eroro");
 }

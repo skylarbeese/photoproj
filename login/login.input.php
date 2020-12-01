@@ -58,14 +58,14 @@ if(isset($_POST['user']) &&  isset($_POST['pass'])) {
     $username = validate($_POST['user']);
     $password = validate($_POST['pass']);
     if(empty($username) && empty($password)){
-        header("location: ../index.php?error=user password");
+        header("location: ../about.php?error=user password");
         exit();
     
 }else if(empty($username)) {
-        header("location: ../index.php?error=user");
+        header("location: ../about.php?error=user");
     exit();
     } else if(empty($password)){
-        header("location: ../index.php?error=pass");
+        header("location: ../about.php?error=pass");
         exit();
     } else {
         $sql = "SELECT * FROM login_ta WHERE us_na='$username' OR email_id='$username' AND pass_w='$password';";
@@ -79,22 +79,22 @@ if(isset($_POST['user']) &&  isset($_POST['pass'])) {
               $_SESSION['user'] = $row['us_na'];
               $_SESSION['user'] = $row['email_id'];
               $_SESSION['pass'] = $row['pass_w'];
-              header("location: ../index.php?error=loggedin");
+              header("location: ../about.php?error=loggedin");
             exit();
             
           } else {
-            header("location: ../index.php?error=notloggedin");
+            header("location: ../about.php?error=notloggedin");
             exit();
           }
           
         } else {
-            header("location: ../index.php?error=norow");
+            header("location: ../about.php?error=norow");
             exit();
         }
-        header("location: ../index.php?error=good");
+        header("location: ../about.php?error=good");
         exit();
     }
 } else {
-    header("location: ../index.php");
+    header("location: ../about.php");
     exit();
 }

@@ -17,29 +17,7 @@ session_start();
 <body>
 
 	<section>
-  <div class="sign-con"> 
-  <div class="signin-div">
-	
-  <?php 
-   if(isset($_SESSION['user'])) {
-	  echo "<form action='login/logout.php' method'POST'>
-	  <input type='submit' name='submit' value='logout'>
-	  </form>";
-   } else {
-	echo " <form class='signin' action='login/login.input.php' method='POST'>
-	<h2>username: </h2><input  type='text' name='user' placeholder='username'>
-	<h2>password: </h2><input  type='text' name='pass' placeholder='password'>
-	<input type='submit' name='submit' value='login'>
-	</form>";
-
-	echo " <a href='login/signin.php'><button class='signup'> signup </h1></button>";
-   }
-?>
-  </div> 
- 
- 
-
-  </div>
+  
   
 		
 	
@@ -51,7 +29,7 @@ session_start();
 					<img class="logo" src="2x/logo1.jpg" alt="">
 					<h1><span> S</span>kylar Beese</h1>
 				</div>
-					<li class="about"> about </li>
+					<a href="about.php"><li class="about"> about </li></a>
 				<a href="gallery.html"><li class="gallery"> gallery </li></a>	
 			</ul>
 	
@@ -171,29 +149,7 @@ session_start();
 	
       
 			</div>
-		</div>
-		<div class="banner2" id="contact">
-		   <div class="img2">
-		</div>
-			<div class="linear-gradient2"></div>
-<?php
-   if(isset($_SESSION['user'])) {
-		echo	'<form class="message-form" action="" method="POST">
-
-			 <h3>contact me!</h3> 
-			<h5>first name: </h5><input class="first-name form-control" type="text" name="first" placeholder="first name"><br>
-			<h5>last name: </h5><input class="last-name form-control" type="text" name="last" placeholder="last name"><br>
-			<h5>email: </h5><input class="email form-control" type="email" name="email" placeholder="johnDoe@gmsil.com"><br>
-			<h5>type your questions here! </h5><textarea class="message form-control" type="text" name="text" row="5" placeholder="message..."></textarea><br>
-		
-			<button class="form-control submit" type="submit" name="submit"> submit message!</button>
-   
-			   </form>';
-   } else {
-	   echo '<h3 class="mess"> signup to contact me!</h3>';
-   }
-?>
-		</div>
+		</div> -->
 	
 	</section>
 
@@ -220,12 +176,7 @@ session_start();
 			visibility: hidden;
 
 		}
-		.vis{
-			visibility: visible;
-       }
-	  .hid{
-		visibility: hidden;
-	  }
+		
 		section {
 			
 		
@@ -235,32 +186,7 @@ session_start();
 	
 /*-----------------------------------------------------------------------------*/
 
-/*----------------------------------------------------------------------------------------------------*/
-.signup{
-	width:20%;
-	  height: 10%;
-}
-.signup:hover{
-	background-color: brown;
-	color:blanchedalmond;
-}
-.signin{
-	
-			float: left;
-			display: flex;
-			margin: 10px;
-}
-.signin h2{
-	font-size: 20px;
-}
-.btn-sign-in{
-	width:100px;
-	  height: 70px;
- 
-	  justify-content: center;
-	  align-items: center;
-	  display: flex;
-}
+
 /*-------------------------------------------------------------------------------------------------------*/
     .landing-con {
 		width: 100%;
@@ -380,12 +306,7 @@ session_start();
 			transform: translateY(0);
 		}
 
-/*-------------------------------------------------------------------------------------------------------*/
-     	/*	.grad2{
-			
-			filter: blur(3px);
-			
-		}  */
+
 /*------------------------------------------------------------------------------------------------------------------------------*/	
 
 		.img-div{
@@ -570,13 +491,7 @@ session_start();
         	align-items: center;
         	display: flex;
         } 
-         .banner2 {
-        	width: 100vw;
-        	height: 90vh;
-        	justify-content: center;
-        	align-items: center;
-        	display: flex;
-        } 
+ 
    .img {
 			 height: 300px;
 			 background-attachment: fixed;
@@ -595,22 +510,7 @@ session_start();
          	 width: 100vw;
             height: 10030vh;
          }
-		
-		.img2 {
-			 
-			background-attachment: fixed;
-			background-image: url("img/img4.jpg");
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-            position: relative;
-            color: white;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-		} 
-		
+
         .box1 {
            height: 60vh;
            width: 100%;
@@ -634,21 +534,7 @@ session_start();
 			 height: 104%;
 			 background-image: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4));
 		}
-		 .linear-gradient2 {
-			 justify-content: center;
-			 align-items: center;
-			 display: flex;
-			 position: absolute;
-			 width: 105%;
-			 height: 92%;
-			 background-image: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4));
-		}
-		h3.mess{
-			justify-content: center;
-			 align-items: center;
-			 display: flex;
-			 position: absolute;
-		}
+
 		.img-text {
 			width: 70vw;
 			height: 100%;
@@ -661,18 +547,7 @@ session_start();
             padding: 20px;
 
 		}
-		.message-form {
-		    
-			justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            padding: 20px;
-			background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5));
-			border-radius: 10px;
-			
-		}
+	
 		.img-text {
 			animation: 1.4s textFade;
 		}
@@ -697,25 +572,7 @@ session_start();
 				filter: blur(0);
 			}
 		}
-	.message-form input, textarea{
-		background-color: rgb(0, 0, 0, .3);
-		padding: 2px;
-		border-radius: 5px 5px 30px 5px;
-        border: 0;
-        border-bottom: 2px solid black;
-        color: white;
-	    margin: 5px;
-		}
-		h5 {
-			color: white;
-		}
-		button {
-			border: none;
-			padding: 5px 10px 5px 10px;
-			margin: 10px;
-			border-radius: 30px 5px 30px 5px;
-		}
-		
+
 /*-------------------------------------------------------------------------------------------------*/
         .icon-con {
 			justify-content: space-around;
